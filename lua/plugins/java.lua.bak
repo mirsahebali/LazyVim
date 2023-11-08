@@ -8,7 +8,7 @@ return {
           vim.api.nvim_create_autocmd("FileType", {
             pattern = "java",
             callback = function()
-              require("lazyvim.util").on_attach(function(_, buffer)
+              require("lazyvim.util").lsp.on_attach(function(_, buffer)
                 vim.keymap.set(
                   "n",
                   "<leader>di",
@@ -85,7 +85,7 @@ return {
                   -- eclipse.jdt.ls installation                                           the actual version
 
                   "-configuration",
-                  "/usr/share/java/jdtls/config_linux",
+                  "/home/mirsahebali/.local/share/nvim/mason/share/jdtls/config/config.ini",
                   -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
                   -- Must point to the                      Change to one of `linux`, `win` or `mac`
                   -- eclipse.jdt.ls installation            Depending on your system.
