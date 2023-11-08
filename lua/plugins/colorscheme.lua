@@ -4,6 +4,11 @@ return {
     lazy = true,
     name = "catppuccin",
     opts = {
+      color_overrides = {
+        macchiato = {
+          base = "#222429",
+        },
+      },
       transparent_background = true,
       integrations = {
         alpha = true,
@@ -35,5 +40,15 @@ return {
         which_key = true,
       },
     },
+  },
+  {
+    "navarasu/onedark.nvim",
+    lazy = true,
+    config = function()
+      require("onedark").setup({
+        style = "deep",
+        transparent = true,
+      })
+    end,
   },
 }
