@@ -13,10 +13,11 @@ return {
               workspaces = {
                 notes = "~/notes",
                 rice = "~/notes/rice",
-                focace = "~/notes/arch/focace",
+                focace = "~/notes/focace",
                 sdd = "~/notes/arch/simpleDropDown",
                 sf = "~/notes/challengers/syncFile",
               },
+              default = "focace",
             },
           },
         },

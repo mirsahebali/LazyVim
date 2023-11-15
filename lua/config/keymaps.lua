@@ -45,3 +45,6 @@ vim.keymap.set(
 
 -- Oil.nvim Keymaps
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+--MultiCursor Mappings
+vim.keymap.set({ "n", "v" }, "<M-,>", "<cmd>MCstart<cr>", { desc = "Start MultiCursor" })
