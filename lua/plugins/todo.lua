@@ -18,6 +18,7 @@ return {
         DONE = { icon = " ", color = "#33cc33", alt = { "CHECKED" } },
         TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
         STRUCT = { icon = " ", color = "#0066ff", alt = { "SCHEMA", "TYPE", "INTERFACE" } },
+        QUESTION = { icon = " ", color = "#FF0080", alt = { "QN" } },
       },
     },
   },
