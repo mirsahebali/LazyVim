@@ -1,5 +1,11 @@
 return {
   {
+    "akinsho/org-bullets.nvim",
+    config = function()
+      require("org-bullets").setup()
+    end,
+  },
+  {
     "nvim-orgmode/orgmode",
     dependencies = {
       { "nvim-treesitter/nvim-treesitter", lazy = true },

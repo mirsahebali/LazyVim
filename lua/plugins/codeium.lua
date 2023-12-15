@@ -1,23 +1,26 @@
 return {
-  {
-    "Exafunction/codeium.vim",
-    config = function()
-      -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set("i", "<C-g>", function()
-        return vim.fn["codeium#Accept"]()
-      end, { expr = true })
-      vim.keymap.set("i", "<c-;>", function()
-        return vim.fn["codeium#CycleCompletions"](1)
-      end, { expr = true })
-      vim.keymap.set("i", "<c-,>", function()
-        return vim.fn["codeium#CycleCompletions"](-1)
-      end, { expr = true })
-      vim.keymap.set("i", "<c-x>", function()
-        return vim.fn["codeium#Clear"]()
-      end, { expr = true })
-      vim.keymap.set("n", "cdb", "<cmd>CodeiumDisable<cr>", { desc = "Codeium Disable" })
 
-      vim.keymap.set("n", "cde", "<cmd>CodeiumEnable<cr>", { desc = "Codeium Enable" })
-    end,
+  {
+    {
+      "Exafunction/codeium.nvim",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "hrsh7th/nvim-cmp",
+      },
+      config = function()
+        local cmp = require("cmp")
+        require("codeium").setup({})
+        cmp.setup({
+          formatting = {
+            format = require("lspkind").cmp_format({
+              mode = "symbol",
+              maxwidth = 50,
+              ellipsis_char = "...",
+              symbol_map = { Codeium = "" },
+            }),
+          },
+        })
+      end,
+    },
   },
 }
